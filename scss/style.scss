@@ -1,0 +1,71 @@
+//Two ways to compile it 1st live sass compiler in vscode and 2nd node module
+// //colors
+// $light-color: #1a025755;
+// $cyan: #04c0c355;
+// $primary-color: #0e6cff;
+// $secondary-color: #ff8700;
+// //fonts
+// $font-stack: Arial,Helvetica,sans-serif;
+
+@import 'config';
+@import 'button';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: $cyan;
+    font-family: $font-stack;
+    &-content{
+        height: 500px;
+    }
+}
+
+nav{
+    height: 100px;
+
+}
+ul{
+    display: flex;
+    .list{
+        margin: 3px 12px;
+        list-style: none;
+        padding: 9px 17px;
+        background-color: darken($purple,20%);
+        box-shadow: 4px 6px 8px $purple;
+        color: set-text-color($purple);
+        border-radius: 10px;
+        // text-decoration: solid;
+        font-weight: bolder;
+        &:hover{
+            background-color: $secondary-color;
+            box-shadow: 4px 6px 8px $secondary-color;
+            color: set-text-color($secondary-color);
+            cursor: pointer;
+            
+        }
+        &:active{
+            background-color: $secondary-color;
+            box-shadow: 4px 6px 8px $secondary-color;
+            color: set-text-color($secondary-color);
+
+        }
+    }
+}
+
+.container{
+    // margin-top: 5rem;
+    padding: 15em;
+    overflow-y: n;
+    scroll-behavior: auto;
+    // height: 500px;
+    // background-color: $light-color;
+    @include set-background($light-color);
+    font-weight: bolder;
+    
+}
+
+@import 'mobile';
